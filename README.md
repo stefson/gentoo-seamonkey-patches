@@ -19,3 +19,4 @@ upstream to ensure we can drop them as quick as possible.
 - Fedora Patches 400x
 - Alpine Patches 500x
 - User Patches 600x
+- Python-support Related Patches 700x
