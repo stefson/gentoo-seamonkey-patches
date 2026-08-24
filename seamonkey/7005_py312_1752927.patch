@@ -1,6 +1,6 @@
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py seamonkey-2.53.23/python/mozboot/mozboot/base.py
---- seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozboot/mozboot/base.py	2026-01-10 22:54:06.459415420 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozboot/mozboot/base.py seamonkey-2.53.24/python/mozboot/mozboot/base.py
+--- seamonkey-2.53.24.orig/python/mozboot/mozboot/base.py	2026-08-22 22:12:41.377797877 +0200
++++ seamonkey-2.53.24/python/mozboot/mozboot/base.py	2026-08-22 22:16:06.400867618 +0200
 @@ -10,7 +10,7 @@
  import subprocess
  import sys
@@ -10,11 +10,11 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py s
  from mozboot import rust
  from mozboot.util import (
      get_mach_virtualenv_binary,
-@@ -133,13 +133,13 @@
+@@ -134,13 +134,13 @@
  # Upgrade Mercurial older than this.
- # This should match OLDEST_NON_LEGACY_VERSION from
- # the hg setup wizard in version-control-tools.
--MODERN_MERCURIAL_VERSION = LooseVersion('4.3.3')
+ # This should match the OLDEST_NON_LEGACY_VERSION in
+ # version-control-tools/hgext/configwizard/__init__.py.
+-MODERN_MERCURIAL_VERSION = LooseVersion('4.9')
 +MODERN_MERCURIAL_VERSION = Version("4.9")
  
  # Upgrade rust older than this.
@@ -27,7 +27,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py s
  
  
  class BaseBootstrapper(object):
-@@ -481,7 +481,7 @@
+@@ -484,7 +484,7 @@
          '''Execute the given path, returning the version.
  
          Invokes the path argument with the --version switch
@@ -36,7 +36,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py s
          if successful. If not, returns None.
  
          An optional name argument gives the expected program
-@@ -511,7 +511,7 @@
+@@ -514,7 +514,7 @@
              print('ERROR! Unable to identify %s version.' % name)
              return None
  
@@ -45,19 +45,19 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py s
  
      def _parse_version(self, path, name=None, env=None):
          return self._parse_version_impl(path, name, env, "--version")
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/bootstrap.py seamonkey-2.53.23/python/mozboot/mozboot/bootstrap.py
---- seamonkey-2.53.23.orig/python/mozboot/mozboot/bootstrap.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozboot/mozboot/bootstrap.py	2026-01-10 22:55:41.637455207 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozboot/mozboot/bootstrap.py seamonkey-2.53.24/python/mozboot/mozboot/bootstrap.py
+--- seamonkey-2.53.24.orig/python/mozboot/mozboot/bootstrap.py	2026-08-22 22:12:41.378215974 +0200
++++ seamonkey-2.53.24/python/mozboot/mozboot/bootstrap.py	2026-08-22 22:16:33.867426868 +0200
 @@ -12,7 +12,7 @@
  import sys
  import subprocess
  import time
 -from distutils.version import LooseVersion
 +from packaging.version import Version
+ from mozfile import which
  
  # NOTE: This script is intended to be run with a vanilla Python install.  We
- # have to rely on the standard library instead of Python 2+3 helpers like
-@@ -128,7 +128,7 @@
+@@ -130,7 +130,7 @@
  
  
  # Version 2.24 changes the "core.commitGraph" setting to be "True" by default.
@@ -66,7 +66,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/bootstrap
  OLD_GIT_WARNING = '''
  You are running an older version of git ("{old_version}").
  We recommend upgrading to at least version "{minimum_recommended_version}" to improve
-@@ -540,14 +540,14 @@
+@@ -535,14 +535,14 @@
                                                universal_newlines=True))
      if not match:
          raise Exception('Could not find git version')
@@ -83,9 +83,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/bootstrap
          # "core.untrackedCache" has a bug before 2.17
          subprocess.check_call(
              [git, 'config', 'core.untrackedCache', 'true'], cwd=top_src_dir)
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py seamonkey-2.53.23/python/mozboot/mozboot/osx.py
---- seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozboot/mozboot/osx.py	2026-01-10 22:56:55.407586348 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozboot/mozboot/osx.py seamonkey-2.53.24/python/mozboot/mozboot/osx.py
+--- seamonkey-2.53.24.orig/python/mozboot/mozboot/osx.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozboot/mozboot/osx.py	2026-08-22 22:14:03.390023898 +0200
 @@ -14,7 +14,7 @@
  except ImportError:
      from urllib.request import urlopen
@@ -94,8 +94,8 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py se
 +from packaging.version import Version
  
  from mozboot.base import BaseBootstrapper
- 
-@@ -36,7 +36,7 @@
+ from mozfile import which
+@@ -38,7 +38,7 @@
  
  RE_CLANG_VERSION = re.compile('Apple (?:clang|LLVM) version (\d+\.\d+)')
  
@@ -104,7 +104,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py se
  
  XCODE_REQUIRED = '''
  Xcode is required to build Firefox. Please complete the install of Xcode
-@@ -178,9 +178,9 @@
+@@ -174,9 +174,9 @@
      def __init__(self, version, **kwargs):
          BaseBootstrapper.__init__(self, **kwargs)
  

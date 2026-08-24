@@ -1,6 +1,6 @@
-diff '--color=auto' -urN seamonkey-2.53.23.orig/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py seamonkey-2.53.23/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py
---- seamonkey-2.53.23.orig/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py	2025-11-15 21:08:08.000000000 +0100
-+++ seamonkey-2.53.23/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py	2026-01-10 18:11:52.729866252 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py seamonkey-2.53.24/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py
+--- seamonkey-2.53.24.orig/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/dom/bindings/mozwebidlcodegen/test/test_mozwebidlcodegen.py	2026-08-22 21:02:47.608168953 +0200
 @@ -4,7 +4,6 @@
  
  from __future__ import unicode_literals
@@ -18,7 +18,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/dom/bindings/mozwebidlcodegen/te
  
  from mozunit import (
      MockedOpen,
-@@ -244,7 +243,7 @@
+@@ -245,7 +244,7 @@
          with NamedTemporaryFile('wt') as fh:
              fh.write('# Original content')
              fh.flush()
@@ -27,9 +27,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/dom/bindings/mozwebidlcodegen/te
              mod.__file__ = fake_path
  
              args = self._get_manager_args()
-diff '--color=auto' -urN seamonkey-2.53.23.orig/netwerk/dns/prepare_tlds.py seamonkey-2.53.23/netwerk/dns/prepare_tlds.py
---- seamonkey-2.53.23.orig/netwerk/dns/prepare_tlds.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/netwerk/dns/prepare_tlds.py	2026-01-10 18:13:02.691840379 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/netwerk/dns/prepare_tlds.py seamonkey-2.53.24/netwerk/dns/prepare_tlds.py
+--- seamonkey-2.53.24.orig/netwerk/dns/prepare_tlds.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/netwerk/dns/prepare_tlds.py	2026-08-22 21:02:47.622169559 +0200
 @@ -4,11 +4,11 @@
  
  import codecs
@@ -52,9 +52,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/netwerk/dns/prepare_tlds.py seam
    domains = set()
    for line in file:
      # line always contains a line terminator unless the file is empty
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mach/mach/main.py seamonkey-2.53.23/python/mach/mach/main.py
---- seamonkey-2.53.23.orig/python/mach/mach/main.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mach/mach/main.py	2026-01-10 18:14:28.862503545 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mach/mach/main.py seamonkey-2.53.24/python/mach/mach/main.py
+--- seamonkey-2.53.24.orig/python/mach/mach/main.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mach/mach/main.py	2026-08-22 21:02:47.634170078 +0200
 @@ -10,16 +10,18 @@
  import argparse
  import codecs
@@ -91,9 +91,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mach/mach/main.py seamonk
          except IOError as e:
              if e.errno != errno.ENOENT:
                  raise
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mach/mach/test/test_entry_point.py seamonkey-2.53.23/python/mach/mach/test/test_entry_point.py
---- seamonkey-2.53.23.orig/python/mach/mach/test/test_entry_point.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mach/mach/test/test_entry_point.py	2026-01-10 18:15:15.352479863 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mach/mach/test/test_entry_point.py seamonkey-2.53.24/python/mach/mach/test/test_entry_point.py
+--- seamonkey-2.53.24.orig/python/mach/mach/test/test_entry_point.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mach/mach/test/test_entry_point.py	2026-08-22 21:02:47.636235761 +0200
 @@ -4,9 +4,9 @@
  from __future__ import absolute_import
  from __future__ import unicode_literals
@@ -114,10 +114,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mach/mach/test/test_entry
              sys.modules['mach.commands'] = mod
  
          mock.return_value = [Entry([self.provider_dir])]
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mach_commands.py seamonkey-2.53.23/python/mozbuild/mozbuild/mach_commands.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mach_commands.py	2025-11-24 21:29:21.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/mach_commands.py	2026-01-10 18:16:04.729578905 +0100
-@@ -26,6 +26,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/mach_commands.py seamonkey-2.53.24/python/mozbuild/mozbuild/mach_commands.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/mach_commands.py	2026-07-19 19:08:19.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/mach_commands.py	2026-08-22 21:02:47.644170511 +0200
+@@ -25,6 +25,7 @@
      SettingsProvider,
      SubCommand,
  )
@@ -125,9 +125,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mach_co
  
  from mozbuild.base import (
      BinaryNotFoundException,
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/marionette/harness/marionette_harness/marionette_test/testcases.py seamonkey-2.53.23/testing/marionette/harness/marionette_harness/marionette_test/testcases.py
---- seamonkey-2.53.23.orig/testing/marionette/harness/marionette_harness/marionette_test/testcases.py	2025-11-15 21:08:19.000000000 +0100
-+++ seamonkey-2.53.23/testing/marionette/harness/marionette_harness/marionette_test/testcases.py	2026-01-10 18:19:19.825872555 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/marionette/harness/marionette_harness/marionette_test/testcases.py seamonkey-2.53.24/testing/marionette/harness/marionette_harness/marionette_test/testcases.py
+--- seamonkey-2.53.24.orig/testing/marionette/harness/marionette_harness/marionette_test/testcases.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/marionette/harness/marionette_harness/marionette_test/testcases.py	2026-08-22 21:02:47.645791182 +0200
 @@ -4,7 +4,7 @@
  
  from __future__ import absolute_import
@@ -137,7 +137,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/marionette/harness/mario
  import os
  import re
  import sys
-@@ -24,6 +24,7 @@
+@@ -21,6 +21,7 @@
      TimeoutException,
      UnresponsiveInstanceException
  )
@@ -145,7 +145,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/marionette/harness/mario
  from mozlog import get_default_logger
  
  
-@@ -298,21 +299,20 @@
+@@ -330,21 +331,20 @@
      @classmethod
      def add_tests_to_suite(cls, mod_name, filepath, suite, testloader, marionette,
                             fixtures, testvars, **kwargs):
@@ -176,10 +176,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/marionette/harness/mario
  
          for name in dir(test_mod):
              obj = getattr(test_mod, name)
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mochitest/mach_commands.py seamonkey-2.53.23/testing/mochitest/mach_commands.py
---- seamonkey-2.53.23.orig/testing/mochitest/mach_commands.py	2025-11-24 21:29:21.000000000 +0100
-+++ seamonkey-2.53.23/testing/mochitest/mach_commands.py	2026-01-10 18:21:32.159498135 +0100
-@@ -18,6 +18,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mochitest/mach_commands.py seamonkey-2.53.24/testing/mochitest/mach_commands.py
+--- seamonkey-2.53.24.orig/testing/mochitest/mach_commands.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/mochitest/mach_commands.py	2026-08-22 21:04:56.549496631 +0200
+@@ -17,6 +17,7 @@
      MachCommandConditions as conditions,
      MozbuildObject,
  )
@@ -187,12 +187,12 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mochitest/mach_commands.
  
  from mach.decorators import (
      CommandArgument,
-@@ -106,11 +107,8 @@
+@@ -104,11 +105,8 @@
          """
          # runtests.py is ambiguous, so we load the file/module manually.
          if 'mochitest' not in sys.modules:
 -            import imp
-             path = os.path.join(self.mochitest_dir, 'runtests.py')
+             path = os.path.join(command_context.mochitest_dir, 'runtests.py')
 -            with open(path, 'r') as fh:
 -                imp.load_module('mochitest', fh, path,
 -                                ('.py', 'r', imp.PY_SOURCE))
@@ -200,7 +200,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mochitest/mach_commands.
  
          import mochitest
  
-@@ -161,14 +159,11 @@
+@@ -159,14 +157,11 @@
      with warnings.catch_warnings():
          warnings.simplefilter('ignore')
  
@@ -216,9 +216,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mochitest/mach_commands.
  
          from mochitest_options import MochitestArgumentParser
  
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozfile/mozfile/mozfile.py seamonkey-2.53.23/testing/mozbase/mozfile/mozfile/mozfile.py
---- seamonkey-2.53.23.orig/testing/mozbase/mozfile/mozfile/mozfile.py	2025-11-15 21:08:19.000000000 +0100
-+++ seamonkey-2.53.23/testing/mozbase/mozfile/mozfile/mozfile.py	2026-01-10 18:22:57.593129964 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mozbase/mozfile/mozfile/mozfile.py seamonkey-2.53.24/testing/mozbase/mozfile/mozfile/mozfile.py
+--- seamonkey-2.53.24.orig/testing/mozbase/mozfile/mozfile/mozfile.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/mozbase/mozfile/mozfile/mozfile.py	2026-08-22 21:02:47.646677047 +0200
 @@ -26,6 +26,7 @@
      "extract",
      "is_url",
@@ -227,7 +227,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozfile/mozfile/
      "copy_contents",
      "match",
      "move",
-@@ -565,6 +566,20 @@
+@@ -575,6 +576,20 @@
      return urllib.request.urlopen(resource)
  
  
@@ -248,10 +248,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozfile/mozfile/
  # We can't depend on mozpack.path here, so copy the 'match' function over.
  
  re_cache = {}
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozharness/scripts/desktop_unittest.py seamonkey-2.53.23/testing/mozharness/scripts/desktop_unittest.py
---- seamonkey-2.53.23.orig/testing/mozharness/scripts/desktop_unittest.py	2025-11-15 21:08:19.000000000 +0100
-+++ seamonkey-2.53.23/testing/mozharness/scripts/desktop_unittest.py	2026-01-10 18:24:05.157002143 +0100
-@@ -17,13 +17,13 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mozharness/scripts/desktop_unittest.py seamonkey-2.53.24/testing/mozharness/scripts/desktop_unittest.py
+--- seamonkey-2.53.24.orig/testing/mozharness/scripts/desktop_unittest.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/mozharness/scripts/desktop_unittest.py	2026-08-22 21:06:20.792495491 +0200
+@@ -17,7 +17,6 @@
  import copy
  import shutil
  import glob
@@ -259,14 +259,15 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozharness/scripts/deskt
  
  from datetime import datetime, timedelta
  
- # load modules from parent dir
- sys.path.insert(1, os.path.dirname(sys.path[0]))
+@@ -25,6 +24,7 @@
+ here = os.path.abspath(os.path.dirname(__file__))
+ sys.path.insert(1, os.path.dirname(here))
  
 +from mozfile import load_source
  from mozharness.base.errors import BaseErrorList
  from mozharness.base.log import INFO
  from mozharness.base.script import PreScriptAction
-@@ -844,7 +844,7 @@
+@@ -882,7 +882,7 @@
                                                       log_obj=self.log_obj)
  
                  if suite_category == "reftest":
@@ -275,27 +276,27 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozharness/scripts/deskt
                          "ReftestFormatter",
                          os.path.abspath(
                              os.path.join(dirs["abs_reftest_dir"], "output.py")))
-diff '--color=auto' -urN seamonkey-2.53.23.orig/tools/moztreedocs/mach_commands.py seamonkey-2.53.23/tools/moztreedocs/mach_commands.py
---- seamonkey-2.53.23.orig/tools/moztreedocs/mach_commands.py	2025-11-24 21:29:21.000000000 +0100
-+++ seamonkey-2.53.23/tools/moztreedocs/mach_commands.py	2026-01-10 18:25:50.575483535 +0100
-@@ -15,6 +15,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/tools/moztreedocs/mach_commands.py seamonkey-2.53.24/tools/moztreedocs/mach_commands.py
+--- seamonkey-2.53.24.orig/tools/moztreedocs/mach_commands.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/tools/moztreedocs/mach_commands.py	2026-08-22 21:08:02.731880953 +0200
+@@ -24,6 +24,7 @@
      CommandArgument,
-     CommandProvider,
+     SubCommand,
  )
 +from mozfile import load_source
  
  here = os.path.abspath(os.path.dirname(__file__))
+ topsrcdir = os.path.abspath(os.path.dirname(os.path.dirname(here)))
+@@ -204,11 +205,8 @@
  
-@@ -134,11 +135,8 @@
-         return self._manager
+ @memoize
+ def _read_project_properties():
+-    import imp
+     path = os.path.normpath(self.manager.conf_py_path)
+-    with open(path, 'r') as fh:
+-        conf = imp.load_module('doc_conf', fh, path,
+-                               ('.py', 'r', imp.PY_SOURCE))
++    conf = load_source("doc_conf", path)
  
-     def _read_project_properties(self):
--        import imp
-         path = os.path.normpath(self.manager.conf_py_path)
--        with open(path, 'r') as fh:
--            conf = imp.load_module('doc_conf', fh, path,
--                                   ('.py', 'r', imp.PY_SOURCE))
-+        conf = load_source("doc_conf", path)
- 
-         # Prefer the Mozilla project name, falling back to Sphinx's
-         # default variable if it isn't defined.
+     # Prefer the Mozilla project name, falling back to Sphinx's
+     # default variable if it isn't defined.

@@ -1,6 +1,6 @@
-diff '--color=auto' -urN seamonkey-2.53.23.orig/build/moz.configure/init.configure seamonkey-2.53.23/build/moz.configure/init.configure
---- seamonkey-2.53.23.orig/build/moz.configure/init.configure	2025-11-15 21:08:07.000000000 +0100
-+++ seamonkey-2.53.23/build/moz.configure/init.configure	2026-01-11 17:26:17.371258030 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/build/moz.configure/init.configure seamonkey-2.53.24/build/moz.configure/init.configure
+--- seamonkey-2.53.24.orig/build/moz.configure/init.configure	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/build/moz.configure/init.configure	2026-08-22 22:24:08.690797433 +0200
 @@ -226,7 +226,7 @@
  @imports('os')
  @imports('sys')
@@ -18,10 +18,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/build/moz.configure/init.configu
 +    if not sysconfig.get_path('purelib'):
          die('Could not determine python site packages directory')
  
-     str_version = '.'.join(str(v) for v in version)
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/pythonutil.py seamonkey-2.53.23/python/mozbuild/mozbuild/pythonutil.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/pythonutil.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/pythonutil.py	2026-01-13 10:28:10.873171433 +0100
+     # We may have set PYTHONEXECUTABLE above, and that affects python
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/pythonutil.py seamonkey-2.53.24/python/mozbuild/mozbuild/pythonutil.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/pythonutil.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/pythonutil.py	2026-08-22 22:24:08.691265974 +0200
 @@ -9,9 +9,7 @@
  import subprocess
  import sys
@@ -73,9 +73,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/pythonu
              names.append('python%d.%d' % (major, minor))
  
          for name in names:
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/virtualenv.py seamonkey-2.53.23/python/mozbuild/mozbuild/virtualenv.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/virtualenv.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/virtualenv.py	2026-01-12 09:33:34.698338566 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/virtualenv.py seamonkey-2.53.24/python/mozbuild/mozbuild/virtualenv.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/virtualenv.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/virtualenv.py	2026-08-22 22:24:08.691553819 +0200
 @@ -324,7 +324,7 @@
          environment is not configured properly, packages could be installed
          into the wrong place. This is how virtualenv's work.

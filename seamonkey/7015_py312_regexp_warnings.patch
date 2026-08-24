@@ -1,7 +1,7 @@
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py seamonkey-2.53.23/python/mozboot/mozboot/base.py
---- seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py	2026-01-15 08:29:21.701200800 +0100
-+++ seamonkey-2.53.23/python/mozboot/mozboot/base.py	2026-01-15 09:03:24.652637772 +0100
-@@ -501,7 +501,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozboot/mozboot/base.py seamonkey-2.53.24/python/mozboot/mozboot/base.py
+--- seamonkey-2.53.24.orig/python/mozboot/mozboot/base.py	2026-08-22 22:18:42.710836737 +0200
++++ seamonkey-2.53.24/python/mozboot/mozboot/base.py	2026-08-22 23:02:24.270469487 +0200
+@@ -509,7 +509,7 @@
              # path and move on.
              return None
  
@@ -10,10 +10,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/base.py s
          if not match:
              print('ERROR! Unable to identify %s version.' % name)
              return None
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py seamonkey-2.53.23/python/mozboot/mozboot/osx.py
---- seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py	2026-01-15 08:29:21.702200844 +0100
-+++ seamonkey-2.53.23/python/mozboot/mozboot/osx.py	2026-01-15 09:04:02.581316796 +0100
-@@ -34,7 +34,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozboot/mozboot/osx.py seamonkey-2.53.24/python/mozboot/mozboot/osx.py
+--- seamonkey-2.53.24.orig/python/mozboot/mozboot/osx.py	2026-08-22 22:18:42.711637608 +0200
++++ seamonkey-2.53.24/python/mozboot/mozboot/osx.py	2026-08-22 23:02:24.270872177 +0200
+@@ -36,7 +36,7 @@
      '7': 'https://distfiles.macports.org/MacPorts/MacPorts-2.5.4-10.7-Lion.pkg',
      '6': 'https://distfiles.macports.org/MacPorts/MacPorts-2.5.4-10.6-SnowLeopard.pkg', }
  
@@ -22,9 +22,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozboot/mozboot/osx.py se
  
  APPLE_CLANG_MINIMUM_VERSION = Version('4.2')
  
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/backend/recursivemake.py seamonkey-2.53.23/python/mozbuild/mozbuild/backend/recursivemake.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/backend/recursivemake.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/backend/recursivemake.py	2026-01-15 09:30:13.086346409 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/backend/recursivemake.py seamonkey-2.53.24/python/mozbuild/mozbuild/backend/recursivemake.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/backend/recursivemake.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/backend/recursivemake.py	2026-08-22 23:02:24.271333246 +0200
 @@ -164,7 +164,7 @@
  
  
@@ -34,7 +34,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/backend
  
  
  class BackendMakeFile(object):
-@@ -995,7 +995,7 @@
+@@ -996,7 +996,7 @@
                      for t in ('XPI_PKGNAME', 'INSTALL_EXTENSION_ID', 'tools'):
                          if t not in content:
                              continue
@@ -43,7 +43,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/backend
                              continue
                          if objdir == self.environment.topobjdir:
                              continue
-@@ -1004,7 +1004,7 @@
+@@ -1005,7 +1005,7 @@
  
                      # Directories with a Makefile containing a check target
                      # can't be skipped and must run during the 'check' tier.
@@ -52,10 +52,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/backend
                          self._no_skip['check'].add(mozpath.relpath(objdir,
                                                                     self.environment.topobjdir))
  
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/configure/__init__.py seamonkey-2.53.23/python/mozbuild/mozbuild/configure/__init__.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/configure/__init__.py	2026-01-15 08:29:22.046216073 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/configure/__init__.py	2026-01-15 09:44:00.229962242 +0100
-@@ -824,7 +824,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/configure/__init__.py seamonkey-2.53.24/python/mozbuild/mozbuild/configure/__init__.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/configure/__init__.py	2026-08-22 23:00:56.185723973 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/configure/__init__.py	2026-08-22 23:02:24.271878240 +0200
+@@ -840,7 +840,7 @@
      def wraps(self, func):
          return wraps(func)
  
@@ -64,9 +64,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/configu
  
      def imports_impl(self, _import, _from=None, _as=None):
          '''Implementation of @imports.
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/frontend/context.py seamonkey-2.53.23/python/mozbuild/mozbuild/frontend/context.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/frontend/context.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/frontend/context.py	2026-01-15 09:30:49.696967079 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/frontend/context.py seamonkey-2.53.24/python/mozbuild/mozbuild/frontend/context.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/frontend/context.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/frontend/context.py	2026-08-22 23:02:24.272498064 +0200
 @@ -1908,7 +1908,7 @@
                                    """Names of example WebIDL interfaces to build as part of the build.
  
@@ -76,9 +76,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/fronten
          variables.
          """),
  
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/jar.py seamonkey-2.53.23/python/mozbuild/mozbuild/jar.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/jar.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/jar.py	2026-01-15 09:32:48.109208937 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/jar.py seamonkey-2.53.24/python/mozbuild/mozbuild/jar.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/jar.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/jar.py	2026-08-22 23:02:24.273106227 +0200
 @@ -98,8 +98,8 @@
  
  class JarManifestParser(object):
@@ -108,9 +108,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/jar.py 
          )
  
      def __init__(self):
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mozconfig.py seamonkey-2.53.23/python/mozbuild/mozbuild/mozconfig.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mozconfig.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/mozconfig.py	2026-01-15 09:44:56.949473084 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/mozconfig.py seamonkey-2.53.24/python/mozbuild/mozbuild/mozconfig.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/mozconfig.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/mozconfig.py	2026-08-22 23:02:24.273473053 +0200
 @@ -60,7 +60,7 @@
  class MozconfigLoader(object):
      """Handles loading and parsing of mozconfig files."""
@@ -120,9 +120,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/mozconf
          ^\s*                    # Leading whitespace
          (?P<var>[a-zA-Z_0-9]+)  # Variable name
          \s* [?:]?= \s*          # Assignment operator surrounded by optional
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/preprocessor.py seamonkey-2.53.23/python/mozbuild/mozbuild/preprocessor.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/preprocessor.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/preprocessor.py	2026-01-15 09:46:06.881568825 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/preprocessor.py seamonkey-2.53.24/python/mozbuild/mozbuild/preprocessor.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/preprocessor.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/preprocessor.py	2026-08-22 23:02:24.273821016 +0200
 @@ -1,7 +1,7 @@
  # This Source Code Form is subject to the terms of the Mozilla Public
  # License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -280,9 +280,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/preproc
          oldFile = self.context['FILE']
          oldLine = self.context['LINE']
          oldDir = self.context['DIRECTORY']
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/shellutil.py seamonkey-2.53.23/python/mozbuild/mozbuild/shellutil.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/shellutil.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/shellutil.py	2026-01-15 09:49:34.887776797 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/shellutil.py seamonkey-2.53.24/python/mozbuild/mozbuild/shellutil.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/shellutil.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/shellutil.py	2026-08-22 23:02:24.274265098 +0200
 @@ -22,7 +22,7 @@
  
      # The final pattern matches either the above pattern, or an escaped
@@ -310,9 +310,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/shellut
      return _ClineSplitter(s).result
  
  
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/util.py seamonkey-2.53.23/python/mozbuild/mozbuild/util.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/util.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/util.py	2026-01-15 09:00:53.494946343 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/util.py seamonkey-2.53.24/python/mozbuild/mozbuild/util.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/util.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/util.py	2026-08-22 23:02:24.274601769 +0200
 @@ -1211,7 +1211,7 @@
      return zip(a, b)
  
@@ -322,10 +322,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/util.py
  
  
  def expand_variables(s, variables):
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozpack/packager/__init__.py seamonkey-2.53.23/python/mozbuild/mozpack/packager/__init__.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozpack/packager/__init__.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozpack/packager/__init__.py	2026-01-15 09:33:44.741715927 +0100
-@@ -102,7 +102,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozpack/packager/__init__.py seamonkey-2.53.24/python/mozbuild/mozpack/packager/__init__.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozpack/packager/__init__.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozpack/packager/__init__.py	2026-08-22 23:02:24.275079651 +0200
+@@ -112,7 +112,7 @@
          component = splits[0].strip()
          if not component:
              raise ValueError('No component found')
@@ -334,9 +334,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozpack/packager
              raise ValueError('Bad component name ' + component)
          options = Component._split_options(splits[1]) if len(splits) > 1 else {}
          return component, options
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozinfo/mozinfo/mozinfo.py seamonkey-2.53.23/testing/mozbase/mozinfo/mozinfo/mozinfo.py
---- seamonkey-2.53.23.orig/testing/mozbase/mozinfo/mozinfo/mozinfo.py	2025-11-15 21:08:19.000000000 +0100
-+++ seamonkey-2.53.23/testing/mozbase/mozinfo/mozinfo/mozinfo.py	2026-01-15 09:34:46.456447912 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mozbase/mozinfo/mozinfo/mozinfo.py seamonkey-2.53.24/testing/mozbase/mozinfo/mozinfo/mozinfo.py
+--- seamonkey-2.53.24.orig/testing/mozbase/mozinfo/mozinfo/mozinfo.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/mozbase/mozinfo/mozinfo/mozinfo.py	2026-08-22 23:02:24.275347668 +0200
 @@ -156,7 +156,7 @@
      processor = "aarch64"
  elif processor == "Power Macintosh":
@@ -346,9 +346,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozinfo/mozinfo/
  info.update({'processor': processor,
               'bits': int(bits),
               })
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozinstall/mozinstall/mozinstall.py seamonkey-2.53.23/testing/mozbase/mozinstall/mozinstall/mozinstall.py
---- seamonkey-2.53.23.orig/testing/mozbase/mozinstall/mozinstall/mozinstall.py	2025-11-15 21:08:19.000000000 +0100
-+++ seamonkey-2.53.23/testing/mozbase/mozinstall/mozinstall/mozinstall.py	2026-01-15 09:35:40.409836306 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mozbase/mozinstall/mozinstall/mozinstall.py seamonkey-2.53.24/testing/mozbase/mozinstall/mozinstall/mozinstall.py
+--- seamonkey-2.53.24.orig/testing/mozbase/mozinstall/mozinstall/mozinstall.py	2026-05-30 14:18:45.000000000 +0200
++++ seamonkey-2.53.24/testing/mozbase/mozinstall/mozinstall/mozinstall.py	2026-08-22 23:02:24.275628772 +0200
 @@ -222,7 +222,7 @@
          if os.path.isfile(log_file):
              trbk = None
@@ -358,10 +358,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozbase/mozinstall/mozin
                  result = subprocess.call(cmdArgs)
                  if result != 0:
                      raise Exception('Execution of uninstaller failed.')
-diff '--color=auto' -urN seamonkey-2.53.23.orig/testing/mozharness/mach_commands.py seamonkey-2.53.23/testing/mozharness/mach_commands.py
---- seamonkey-2.53.23.orig/testing/mozharness/mach_commands.py	2025-11-24 21:29:21.000000000 +0100
-+++ seamonkey-2.53.23/testing/mozharness/mach_commands.py	2026-01-15 09:05:08.776247103 +0100
-@@ -136,9 +136,9 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/testing/mozharness/mach_commands.py seamonkey-2.53.24/testing/mozharness/mach_commands.py
+--- seamonkey-2.53.24.orig/testing/mozharness/mach_commands.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/testing/mozharness/mach_commands.py	2026-08-22 23:02:24.275887878 +0200
+@@ -134,9 +134,9 @@
  
      def _installer_url(self):
          package_re = {

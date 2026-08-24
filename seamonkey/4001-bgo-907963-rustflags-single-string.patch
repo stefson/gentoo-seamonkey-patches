@@ -3,10 +3,10 @@ This fixes bug https://bugs.gentoo.org/942994
 Patch is taken from the Firefox patches tarball, initially provided by
 Fedora Linux.
 
-diff '--color=auto' -urN seamonkey-2.53.20.orig/build/moz.configure/toolchain.configure seamonkey-2.53.20/build/moz.configure/toolchain.configure
---- seamonkey-2.53.20.orig/build/moz.configure/toolchain.configure	2024-12-14 11:37:23.000000000 +0100
-+++ seamonkey-2.53.20/build/moz.configure/toolchain.configure	2025-01-28 14:28:42.652323359 +0100
-@@ -1686,9 +1686,7 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/build/moz.configure/toolchain.configure seamonkey-2.53.24/build/moz.configure/toolchain.configure
+--- seamonkey-2.53.24.orig/build/moz.configure/toolchain.configure	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/build/moz.configure/toolchain.configure	2026-08-19 14:20:20.005349575 +0200
+@@ -1698,9 +1698,7 @@
  
  # ==============================================================
  
@@ -17,13 +17,13 @@ diff '--color=auto' -urN seamonkey-2.53.20.orig/build/moz.configure/toolchain.co
  set_config('RUSTFLAGS', depends('RUSTFLAGS')(lambda flags: flags))
  
  
-diff '--color=auto' -urN seamonkey-2.53.20.orig/python/mozbuild/mozbuild/configure/options.py seamonkey-2.53.20/python/mozbuild/mozbuild/configure/options.py
---- seamonkey-2.53.20.orig/python/mozbuild/mozbuild/configure/options.py	2024-12-13 01:29:20.000000000 +0100
-+++ seamonkey-2.53.20/python/mozbuild/mozbuild/configure/options.py	2025-01-28 14:35:21.122284623 +0100
-@@ -158,14 +158,18 @@
-     - `help` is the option description for use in the --help output.
-     - `possible_origins` is a tuple of strings that are origins accepted for
-       this option. Example origins are 'mozconfig', 'implied', and 'environment'.
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/configure/options.py seamonkey-2.53.24/python/mozbuild/mozbuild/configure/options.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/configure/options.py	2026-05-30 15:08:55.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/configure/options.py	2026-08-19 14:24:05.221448901 +0200
+@@ -190,15 +190,19 @@
+       to instantiate an option indirectly. Set this to a positive integer to
+       force the script to look into a deeper stack frame when inferring the
+       `category`.
 +    - `comma_split` specifies whether the value string should be split on
 +      commas. The default is True. Setting it False is necessary for things
 +      like compiler flags which should be a single string that may contain
@@ -31,20 +31,21 @@ diff '--color=auto' -urN seamonkey-2.53.20.orig/python/mozbuild/mozbuild/configu
      '''
      __slots__ = (
          'id', 'prefix', 'name', 'env', 'nargs', 'default', 'choices', 'help',
--        'possible_origins',
-+        'possible_origins', "comma_split",
+-        'possible_origins', 'category', 'define_depth',
++        'possible_origins', 'category', 'define_depth', "comma_split",
      )
  
      def __init__(self, name=None, env=None, nargs=None, default=None,
--                 possible_origins=None, choices=None, help=None):
-+                 possible_origins=None, choices=None, help=None, comma_split=True):
+                  possible_origins=None, choices=None, category=None, help=None,
+-                 define_depth=0):
++                 define_depth=0, comma_split=True):
          if not name and not env:
              raise InvalidOptionError(
                  'At least an option name or an environment variable name must '
-@@ -267,9 +271,10 @@
-                 raise InvalidOptionError('Not enough `choices` for `nargs`')
+@@ -309,9 +313,10 @@
          self.choices = choices
          self.help = help
+         self.category = category or _infer_option_category(define_depth)
 +        self.comma_split = comma_split
  
      @staticmethod
@@ -53,7 +54,7 @@ diff '--color=auto' -urN seamonkey-2.53.20.orig/python/mozbuild/mozbuild/configu
          '''Split a flag or variable into a prefix, a name and values
  
          Variables come in the form NAME=values (no prefix).
-@@ -282,7 +287,13 @@
+@@ -324,7 +329,13 @@
  
          elements = option.split('=', 1)
          name = elements[0]
@@ -68,7 +69,7 @@ diff '--color=auto' -urN seamonkey-2.53.20.orig/python/mozbuild/mozbuild/configu
          if name.startswith('--'):
              name = name[2:]
              if not name.islower():
-@@ -351,7 +362,7 @@
+@@ -393,7 +404,7 @@
                  '%s can not be set by %s. Values are accepted from: %s' %
                  (option, origin, ', '.join(self.possible_origins)))
  

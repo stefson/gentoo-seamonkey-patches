@@ -1,6 +1,6 @@
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/nodeutil.py seamonkey-2.53.23/python/mozbuild/mozbuild/nodeutil.py
---- seamonkey-2.53.23.orig/python/mozbuild/mozbuild/nodeutil.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozbuild/mozbuild/nodeutil.py	2026-01-11 13:44:25.129716790 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozbuild/mozbuild/nodeutil.py seamonkey-2.53.24/python/mozbuild/mozbuild/nodeutil.py
+--- seamonkey-2.53.24.orig/python/mozbuild/mozbuild/nodeutil.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozbuild/mozbuild/nodeutil.py	2026-08-22 22:19:16.672487444 +0200
 @@ -8,16 +8,13 @@
  import subprocess
  import platform
@@ -47,9 +47,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozbuild/mozbuild/nodeuti
 +            return exe, version.release
  
      return found_exe, None
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozrelease/mozrelease/versions.py seamonkey-2.53.23/python/mozrelease/mozrelease/versions.py
---- seamonkey-2.53.23.orig/python/mozrelease/mozrelease/versions.py	2026-01-11 14:03:18.691282278 +0100
-+++ seamonkey-2.53.23/python/mozrelease/mozrelease/versions.py	2026-01-11 14:08:23.927440745 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozrelease/mozrelease/versions.py seamonkey-2.53.24/python/mozrelease/mozrelease/versions.py
+--- seamonkey-2.53.24.orig/python/mozrelease/mozrelease/versions.py	2026-08-22 22:10:25.142104118 +0200
++++ seamonkey-2.53.24/python/mozrelease/mozrelease/versions.py	2026-08-22 22:19:16.672836107 +0200
 @@ -4,11 +4,60 @@
  
  from __future__ import absolute_import
@@ -127,9 +127,9 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozrelease/mozrelease/ver
          pass
      try:
          return LooseModernMozillaVersion(version)
-diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozrelease/test/test_versions.py seamonkey-2.53.23/python/mozrelease/test/test_versions.py
---- seamonkey-2.53.23.orig/python/mozrelease/test/test_versions.py	2025-11-15 21:08:17.000000000 +0100
-+++ seamonkey-2.53.23/python/mozrelease/test/test_versions.py	2026-01-11 13:48:40.762359007 +0100
+diff '--color=auto' -urN seamonkey-2.53.24.orig/python/mozrelease/test/test_versions.py seamonkey-2.53.24/python/mozrelease/test/test_versions.py
+--- seamonkey-2.53.24.orig/python/mozrelease/test/test_versions.py	2026-05-30 14:18:44.000000000 +0200
++++ seamonkey-2.53.24/python/mozrelease/test/test_versions.py	2026-08-22 22:19:16.673117478 +0200
 @@ -3,7 +3,11 @@
  import mozunit
  import pytest
@@ -165,10 +165,10 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/python/mozrelease/test/test_vers
  
  @pytest.mark.parametrize('version', ALL_VERSIONS)
  def test_versions_compare_equal(version):
-diff '--color=auto' -urN seamonkey-2.53.23.orig/tools/power/mach_commands.py seamonkey-2.53.23/tools/power/mach_commands.py
---- seamonkey-2.53.23.orig/tools/power/mach_commands.py	2025-11-24 21:29:21.000000000 +0100
-+++ seamonkey-2.53.23/tools/power/mach_commands.py	2026-01-11 13:50:21.142631901 +0100
-@@ -4,20 +4,19 @@
+diff '--color=auto' -urN seamonkey-2.53.24.orig/tools/power/mach_commands.py seamonkey-2.53.24/tools/power/mach_commands.py
+--- seamonkey-2.53.24.orig/tools/power/mach_commands.py	2026-05-30 15:08:56.000000000 +0200
++++ seamonkey-2.53.24/tools/power/mach_commands.py	2026-08-22 22:20:37.476019776 +0200
+@@ -4,18 +4,17 @@
  
  from __future__ import print_function
  
@@ -177,9 +177,7 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/tools/power/mach_commands.py sea
  from mach.decorators import (
      Command,
      CommandArgument,
-     CommandProvider,
  )
- from mozbuild.base import MachCommandBase
 +from packaging.version import Version
  
  
@@ -190,4 +188,4 @@ diff '--color=auto' -urN seamonkey-2.53.23.orig/tools/power/mach_commands.py sea
 +    return release and Version(release) >= Version("10.10")
  
  
- @CommandProvider
+ # Get system power consumption and related measurements.
